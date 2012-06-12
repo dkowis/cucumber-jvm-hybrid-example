@@ -97,17 +97,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                         </goals>
                         <configuration>
                             <tasks>
-                                <echo message="Running Cucumber Ruby Features"/>
+                                <echo message="Running Cucumber Features"/>
                                 <java fork="true"
                                       classname="cucumber.cli.Main"
                                       classpathref="maven.test.classpath"
                                       failonerror="true">
                                     <arg value="-f"/>
                                     <arg value="pretty"/>
+
                                     <arg value="--glue"/>
-                                    <!-- this path is relative to things in the class path -->
                                     <arg value="src/test/resources"/>
-                                    <!-- this is the feature file to run, it doesn't accept globs -->
+
+                                    <arg value="--glue"/>
+                                    <arg value="cucumber/examples/java/calculator"/>
+
                                     <arg value="src/test/resources"/>
                                 </java>
                             </tasks>

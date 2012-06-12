@@ -43,7 +43,7 @@ public class RpnCalculatorStepdefs {
 
     @After
     public void after(ScenarioResult result) {
-        result.write("HELLLLOO");
+        result.write("AFTER HOOK: HELLLLOO");
     }
 
     @Given("^the previous entries:$")

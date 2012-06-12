@@ -9,6 +9,14 @@ World do
   extend RSpec::Matchers
 end
 
+Before do
+  puts "BEFORE HOOK: in teh rubies!"
+end
+
+After do
+  puts "AFTER HOOK: in teh rubies!"
+end
+
 
 Given /^an empty stack$/ do
   java_import com.rackspace.example.RackStack
