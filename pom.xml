@@ -11,7 +11,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <name>Examples: Hybrid Cucumber-JVM Backends</name>
 
     <properties>
-        <cucumber-jvm-version>1.0.6</cucumber-jvm-version>
+        <cucumber-jvm-version>1.0.9</cucumber-jvm-version>
     </properties>
 
     <!-- Uncomment to use the snapshots, else install them by hand
@@ -109,7 +109,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                                     <arg value="src/test/resources"/>
 
                                     <arg value="--glue"/>
-                                    <arg value="cucumber/examples/java/calculator"/>
+                                    <arg value="classpath:cucumber/examples/java/calculator"/>
 
                                     <arg value="src/test/resources"/>
                                 </java>
