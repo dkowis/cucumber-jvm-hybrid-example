@@ -11,7 +11,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <name>Examples: Hybrid Cucumber-JVM Backends</name>
 
     <properties>
-        <cucumber-jvm-version>1.0.9</cucumber-jvm-version>
+        <cucumber-jvm-version>1.2.4</cucumber-jvm-version>
     </properties>
 
     <!-- Uncomment to use the snapshots, else install them by hand
@@ -26,7 +26,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependency>
             <groupId>org.jruby</groupId>
             <artifactId>jruby-complete</artifactId>
-            <version>1.6.5</version>
+            <version>9.0.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -133,7 +133,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                         <version>1.6</version>
                         <executions>
                             <execution>
-                                <phase>generate-test-resources</phase>
+                                <phase>initialize</phase>
                                 <configuration>
                                     <target>
                                         <sequential>
