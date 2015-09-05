@@ -3,6 +3,7 @@ require 'test/unit'
 include Test::Unit::Assertions
 
 require 'rubygems'
+require 'cucumber/api/jruby/en'
 require 'rspec'
 
 World do
@@ -34,7 +35,7 @@ Then /^the stack contains one item$/ do
 end
 
 When /^I push another item into the stack$/ do
-  When "I push an item into the stack"
+  step "I push an item into the stack"
 end
 
 Then /^the stack contains two items$/ do
