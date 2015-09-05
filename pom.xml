@@ -105,40 +105,53 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                         </goals>
                     </execution>
 
-                    <execution>
-                        <phase>test</phase>
-                        <id>run-cucumbers</id>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <echo message="Running Cucumber Features"/>
-                                <java fork="true"
-                                      classname="cucumber.api.cli.Main"
-                                      classpathref="maven.test.classpath"
-                                      failonerror="true">
-                                    <arg value="--plugin"/>
-                                    <arg value="pretty"/>
-
-                                    <arg value="--glue"/>
-                                    <arg value="src/test/resources"/>
-
-                                    <arg value="--glue"/>
-                                    <arg value="classpath:cucumber/examples/java/calculator"/>
-
-                                    <arg value="src/test/resources"/>
-                                </java>
-                            </tasks>
-                        </configuration>
-                    </execution>
-
                 </executions>
             </plugin>
         </plugins>
     </build>
 
     <profiles>
+        <profile>
+            <id>run-cukes</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <id>run-cucumbers</id>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <echo message="Running Cucumber Features"/>
+                                        <java fork="true"
+                                              classname="cucumber.api.cli.Main"
+                                              classpathref="maven.test.classpath"
+                                              failonerror="true">
+                                            <arg value="--plugin"/>
+                                            <arg value="pretty"/>
+
+                                            <arg value="--glue"/>
+                                            <arg value="src/test/resources"/>
+
+                                            <arg value="--glue"/>
+                                            <arg value="classpath:cucumber/examples/java/calculator"/>
+
+                                            <arg value="src/test/resources"/>
+                                        </java>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>initial-bundle</id>
             <build>
