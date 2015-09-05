@@ -25,6 +25,3 @@ to .gitignore so you don't add any more gems.
 Now you can treat the Gemfile and Gemfile.lock as files to be committed to your repo, and any time someone runs the tests
 the bundle install will be run, and that will make sure you always have the gems available for testing, and that any
 updated gems are acquired and downloaded, but don't pollute your repo.
-
-
-
