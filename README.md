@@ -1,5 +1,7 @@
 # Cucumber JVM Hybrid Example
 
+[![Build Status](https://travis-ci.org/dkowis/cucumber-jvm-hybrid-example.svg?branch=master)](https://travis-ci.org/dkowis/cucumber-jvm-hybrid-example)
+
 This project's purpose is to provide an example that uses multiple backends and proves that they work together.
 
 ## Interesting behavior to note
