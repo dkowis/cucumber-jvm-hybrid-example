@@ -72,16 +72,32 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                         <phase>generate-test-resources</phase>
                         <configuration>
                             <target>
-                                <echo message="Doing bundle install"/>
-                                <java jar="${maven.dependency.org.jruby.jruby-complete.jar.path}"
-                                      fork="true" failonerror="true" maxmemory="512m"
-                                      newenvironment="true">
-                                    <env key="GEM_HOME" path="${basedir}/src/test/gems"/>
-                                    <arg value="-S"/>
-                                    <arg value="${basedir}/src/test/gems/bin/bundle"/>
-                                    <arg value="install"/>
-                                    <arg value="--gemfile=${basedir}/Gemfile"/>
-                                </java>
+                                <sequential>
+                                    <echo message="Installing bundler gem"/>
+                                    <java jar="${maven.dependency.org.jruby.jruby-complete.jar.path}"
+                                          fork="true" failonerror="true" maxmemory="256m"
+                                          newenvironment="true">
+                                        <arg value="-S"/>
+                                        <arg value="gem"/>
+                                        <arg value="install"/>
+                                        <arg value="bundler"/>
+                                        <arg value="-i"/>
+                                        <arg value="${basedir}/src/test/gems"/>
+                                        <arg value="--no-ri"/>
+                                        <arg value="--no-rdoc"/>
+                                    </java>
+
+                                    <echo message="Doing bundle install"/>
+                                    <java jar="${maven.dependency.org.jruby.jruby-complete.jar.path}"
+                                          fork="true" failonerror="true" maxmemory="512m"
+                                          newenvironment="true">
+                                        <env key="GEM_HOME" path="${basedir}/src/test/gems"/>
+                                        <arg value="-S"/>
+                                        <arg value="${basedir}/src/test/gems/bin/bundle"/>
+                                        <arg value="install"/>
+                                        <arg value="--gemfile=${basedir}/Gemfile"/>
+                                    </java>
+                                </sequential>
                             </target>
                         </configuration>
                         <goals>
