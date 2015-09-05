@@ -1,5 +1,9 @@
 # Cucumber JVM Hybrid Example
 
+Unfortunately something in travis doesn't like this, and I cannot reproduce it locally. Also I'm not sure anyone would ever
+do their cucumber-jvm builds this way, I probably wouldn't any more. I'm not going to worry about the build failing right now.
+Pull requests accepted!
+
 [![Build Status](https://travis-ci.org/dkowis/cucumber-jvm-hybrid-example.svg?branch=master)](https://travis-ci.org/dkowis/cucumber-jvm-hybrid-example)
 
 This project's purpose is to provide an example that uses multiple backends and proves that they work together.
