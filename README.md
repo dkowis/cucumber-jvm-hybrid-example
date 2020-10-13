@@ -1,5 +1,10 @@
 # Cucumber JVM Hybrid Example
 
+# ARCHIVED
+
+This puppy was an old example. It might still be useful to some, so I'm just gonna archive it. Know that Cucumber-jvm has evolved much since this was written
+and the examples here might not help you any more! Good Luck!
+
 Unfortunately something in travis doesn't like this, and I cannot reproduce it locally. Also I'm not sure anyone would ever
 do their cucumber-jvm builds this way, I probably wouldn't any more. I'm not going to worry about the build failing right now.
 Pull requests accepted!
